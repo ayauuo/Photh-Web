@@ -7,14 +7,142 @@
 
 #screen-shoot {
   position: relative;
-  overflow: hidden;
   width: 100%;
   height: 100vh;
   background-image: url("#{$path-templates}/ShootPage/background.png");
-}
 
-#screen-shoot .screen-shoot__content {
-  position: relative;
-  width: 100%;
-  height: 100%;
+  .shoot-countdown {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    font-size: 120px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+    pointer-events: none;
+    visibility: hidden;
+    &.is-visible {
+      visibility: visible;
+    }
+  }
+
+  .screen-shoot__content { 
+    display: flex;
+
+  }
+
+
+  .left-panel {
+    width:30%;
+    height: 100%;
+    background-color: #a41010;
+
+
+  }
+
+  .thumb-wrapper {
+    position: absolute;
+    top: 135px;
+    left: 299px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+  }
+
+  .thumb-frame {
+    img {
+      background-color: white;
+      height: 203px;
+    }
+  }
+
+  .right-panel {
+    width: 100%;
+    h1{
+      font-size: 80px; text-align: center;
+    }
+  }
+
+  .picture-area {
+    // background-color: aqua;
+    position: absolute;
+    left: 690px;
+    top: 170px;
+    display: flex;
+    align-items: center;
+    .cover,
+    #camera {
+      display: block;
+    }
+    .shoot-main-preview {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+    &.is-preview {
+      .cover,
+      #camera {
+        display: none;
+      }
+      .shoot-main-preview {
+        display: block;
+      }
+    }
+    .cover {
+      position: absolute;
+      z-index: 9;
+      // background-color: aqua;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    #camera {
+      transform: scaleX(-1);
+    }
+  }
+  .btns.shoot-btns {
+    visibility: hidden;
+    &.is-visible {
+      visibility: visible;
+    }
+    .again-btn.is-hidden {
+      visibility: hidden;
+      pointer-events: none;
+    }
+  }
+  .btns{
+    width: 1000px;
+    position: absolute;
+    bottom:70px ;
+    left:690px;
+    display: flex;
+    justify-content: space-between;
+    .shoot-btn{
+      width: 410px;
+      height: 100px;
+
+      border: none;
+      background: none;
+      outline: none;
+      box-shadow: none;
+      appearance: none;
+      -webkit-appearance: none;
+      background-repeat: no-repeat;
+    }
+    .again-btn{
+      background-image: url('#{$path-templates}/ShootPage/reshoot.png');
+    }
+    .next-btn{
+      background-image: url('#{$path-templates}/ShootPage/nextbutton.png');
+    }
+  }
 }

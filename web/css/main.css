@@ -262,16 +262,126 @@ video {
  */
 #screen-shoot {
   position: relative;
-  overflow: hidden;
   width: 100%;
   height: 100vh;
   background-image: url("../assets/templates/ShootPage/background.png");
 }
-
+#screen-shoot .shoot-countdown {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  font-size: 120px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+  pointer-events: none;
+  visibility: hidden;
+}
+#screen-shoot .shoot-countdown.is-visible {
+  visibility: visible;
+}
 #screen-shoot .screen-shoot__content {
-  position: relative;
+  display: flex;
+}
+#screen-shoot .left-panel {
+  width: 30%;
+  height: 100%;
+  background-color: #a41010;
+}
+#screen-shoot .thumb-wrapper {
+  position: absolute;
+  top: 135px;
+  left: 299px;
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+#screen-shoot .thumb-frame img {
+  background-color: white;
+  height: 203px;
+}
+#screen-shoot .right-panel {
+  width: 100%;
+}
+#screen-shoot .right-panel h1 {
+  font-size: 80px;
+  text-align: center;
+}
+#screen-shoot .picture-area {
+  position: absolute;
+  left: 690px;
+  top: 170px;
+  display: flex;
+  align-items: center;
+}
+#screen-shoot .picture-area .cover,
+#screen-shoot .picture-area #camera {
+  display: block;
+}
+#screen-shoot .picture-area .shoot-main-preview {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+}
+#screen-shoot .picture-area.is-preview .cover,
+#screen-shoot .picture-area.is-preview #camera {
+  display: none;
+}
+#screen-shoot .picture-area.is-preview .shoot-main-preview {
+  display: block;
+}
+#screen-shoot .picture-area .cover {
+  position: absolute;
+  z-index: 9;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+#screen-shoot .picture-area #camera {
+  transform: scaleX(-1);
+}
+#screen-shoot .btns.shoot-btns {
+  visibility: hidden;
+}
+#screen-shoot .btns.shoot-btns.is-visible {
+  visibility: visible;
+}
+#screen-shoot .btns.shoot-btns .again-btn.is-hidden {
+  visibility: hidden;
+  pointer-events: none;
+}
+#screen-shoot .btns {
+  width: 1000px;
+  position: absolute;
+  bottom: 70px;
+  left: 690px;
+  display: flex;
+  justify-content: space-between;
+}
+#screen-shoot .btns .shoot-btn {
+  width: 410px;
+  height: 100px;
+  border: none;
+  background: none;
+  outline: none;
+  box-shadow: none;
+  appearance: none;
+  -webkit-appearance: none;
+  background-repeat: no-repeat;
+}
+#screen-shoot .btns .again-btn {
+  background-image: url("../assets/templates/ShootPage/reshoot.png");
+}
+#screen-shoot .btns .next-btn {
+  background-image: url("../assets/templates/ShootPage/nextbutton.png");
 }
 
 /*
