@@ -1,0 +1,11 @@
+/*
+ * PhotoBooth 樣式入口
+ * 依頁面拆成多個 CSS，此檔僅負責引入，順序勿改。
+ */
+@import "css/base.css";
+@import "css/page-idle.css";
+@import "css/page-template.css";
+@import "css/page-shoot.css";
+@import "css/page-processing.css";
+@import "css/page-result.css";
+@import "css/loading.css";

@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <title>PhotoBooth</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- 待機畫面 -->
+    <div id="screen-idle" class="screen active">
+      <!-- <div class="test-buttons">
+        <button class="btn primary" id="btn-test-payment">測試：投幣畫面</button>
+        <button class="btn primary" id="btn-test-template">測試：選版型畫面</button>
+        <button class="btn primary" id="btn-test-shoot">測試：拍照畫面</button>
+        <button class="btn primary" id="btn-test-processing">測試：處理畫面</button>
+        <button class="btn primary" id="btn-test-result">測試：結果畫面</button>
+        <button class="btn primary" id="btn-quick-print" style="background-color: #28a745; font-size: 18px; padding: 15px 30px; margin-top: 10px;">直接拍照並列印</button>
+      </div> -->
+</div>
+    <!-- 待機畫面 -->
+
+
+    <!-- 選版型畫面 -->
+    <div id="screen-template" class="screen template-screen">
+      <div class="big-title"></div> 
+      <div class="template-scroll">
+        <div class="template-grid" id="template-list"></div>
+      </div>
+      <div class="center-actions template-footer">
+        <button class="btn primary" id="btn-template-next">下一步</button>
+      </div>
+    </div>
+    <!-- 拍照畫面 -->
+    <div id="screen-shoot" class="screen shoot-screen">
+      <img class="shoot-background" src="assets/templates/ShootPage/background.png" alt="background" />
+      <div class="shoot-content">
+        <div class="shoot-main-layout">
+          <!-- 濾鏡面板（左欄，濾鏡模式時顯示） -->
+          <div id="filters" class="filters">
+            <button class="fbtn" data-filter="slim">瘦臉</button>
+            <button class="fbtn" data-filter="bigeye">大眼</button>
+            <button class="fbtn" data-filter="bright">清透亮白</button>
+            <button class="fbtn" data-filter="film">理光復片</button>
+          </div>
+
+          <!-- 左側垂直面板（縮圖） -->
+          <div class="shoot-left-panel">
+            <div class="thumb-wrapper">
+              <img class="thumb-frame" id="tf0" />
+              <img id="t0" class="thumb disabled" />
+            </div>
+            <div class="thumb-wrapper">
+              <img class="thumb-frame" id="tf1" />
+              <img id="t1" class="thumb disabled" />
+            </div>
+            <div class="thumb-wrapper">
+              <img class="thumb-frame" id="tf2" />
+              <img id="t2" class="thumb disabled" />
+            </div>
+            <div class="thumb-wrapper">
+              <img class="thumb-frame" id="tf3" />
+              <img id="t3" class="thumb disabled" />
+            </div>
+          </div>
+
+          <!-- 右側/中央攝影機畫面區域 -->
+          <div class="shoot-right-area">
+            <div class="stage">
+              <div class="frame">
+                <img class="big-frame" id="bigFrame" />
+                <video id="v" autoplay playsinline></video>
+                <img id="bigimg" class="bigimg" style="display:none;" />
+                <div class="overlayCount" id="count"></div>
+              </div>
+            </div>
+            <div class="shoot-hint" id="hint">拍攝中：每張倒數 10 秒</div>
+          </div>
+        </div>
+
+        <!-- 底部按鈕區域 -->
+        <div class="shoot-footer">
+          <div class="shoot-controls">
+            <button class="shoot-btn-reshoot" id="retake" style="display:none;">
+              <img src="assets/templates/ShootPage/reshoot.png" alt="重拍" />
+            </button>
+            <button class="shoot-btn-next" id="next" style="display:none;">
+              <img src="assets/templates/ShootPage/nextbutton.png" alt="下一步" />
+            </button>
+          </div>
+        </div>
+
+        <!-- 調試用 -->
+        <div class="log" id="log"></div>
+      </div>
+    </div>
+
+    <!-- 處理/結果 -->
+    <div id="screen-processing" class="screen">
+      <div class="processing-content">
+        <img src="assets/templates/common/image_processing.png" alt="處理中" class="processing-image" />
+      </div>
+    </div>
+    <div id="screen-result" class="screen">
+      <div class="result-wrap">
+        <div class="result-preview">
+          <img id="final-preview" alt="final preview" />
+        </div>
+        <div class="qr-panel">
+          <div class="qr-title">掃描QRcode儲存照片</div>
+          <div class="qr-frame">
+            <img id="qr-image" alt="qr code" />
+            <div id="qr-text" class="qr-text"></div>
+          </div>
+          <div class="print-section">
+            <div class="input-row" style="margin-bottom: 8px;">
+              <label for="copies" style="color: #333; font-size: 14px;">列印數量</label>
+              <input id="copies" type="number" min="1" max="5" value="1" style="font-size: 14px; padding: 4px 8px;" />
+            </div>
+            <div class="print-button-wrapper" id="btn-print-wrapper">
+              <img src="assets/templates/QRcodePage/printbutton.png" alt="列印按鈕" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Global Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay" style="display:none;">
+      <div class="spinner"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/glfx@0.0.4/glfx.js"></script>
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

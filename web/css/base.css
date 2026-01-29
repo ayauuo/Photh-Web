@@ -1,0 +1,80 @@
+/*
+ * base.css - 全站共用
+ * 用途：色票、box-sizing、body、畫面切換、通用按鈕
+ */
+:root {
+  --bg: #ffffff;
+  --text: #111;
+  --accent: #ff4d4f;
+  --orange: #ff9800;
+}
+* { box-sizing: border-box; }
+
+/* 禁止全站文字反白／選取（輸入框除外） */
+body {
+  margin: 0;
+  font-family: "Segoe UI", "Noto Sans TC", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  height: 100vh;
+  overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+input,
+textarea {
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+/* 禁止拖移圖片與影片 */
+img,
+video {
+  -webkit-user-drag: none;
+  user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -ms-user-drag: none;
+  pointer-events: auto;
+}
+
+.screen {
+  display: none !important;
+  min-height: 100vh;
+  padding: 24px 36px;
+  position: relative;
+  z-index: 1;
+}
+.screen.active {
+  display: block !important;
+  z-index: 10;
+}
+.screen.template-screen.active {
+  display: flex !important;
+  z-index: 10;
+}
+.screen:not(.active) {
+  pointer-events: none;
+}
+
+.btn {
+  font-size: 22px;
+  padding: 12px 20px;
+  min-width: 180px;
+  border: 1px solid #999;
+  background: #eee;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn.primary { background: #222; color: #fff; border-color: #222; }
+.btn.accent { background: var(--accent); color: #fff; border-color: var(--accent); }
+.btn.orange { background: var(--orange); color: #fff; border-color: var(--orange); }
+.center-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}

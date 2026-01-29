@@ -1,0 +1,72 @@
+     /*
+ * page-idle.css - 待機／測試頁 #screen-idle
+ * 用途：待機背景圖、測試按鈕區、付款計數區
+ */
+
+#screen-idle{
+  background-color: aqua;
+  background-image: url("../assets/templates/IdlePage/cover.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  width: 1920px;
+  height: 1080px;
+
+}
+
+.idle-background,
+.idle-logo,
+.idle-coin {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.test-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 40px;
+  position: relative;
+  z-index: 10;
+}
+.test-buttons .btn {
+  min-width: 250px;
+  font-size: 20px;
+}
+.sub {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.payment-counter {
+  text-align: center;
+  margin: 24px 0;
+  padding: 20px;
+  background: #f5f5f5;
+  border-radius: 12px;
+  border: 2px solid #ddd;
+}
+.counter-label {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 8px;
+}
+.counter-amount {
+  font-size: 48px;
+  font-weight: bold;
+  color: #222;
+  margin: 8px 0;
+}
+.counter-last {
+  font-size: 16px;
+  color: #888;
+  margin-top: 8px;
+}

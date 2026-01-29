@@ -1,0 +1,93 @@
+/*
+ * template.css - 選版型畫面 #screen-template
+ * 用途：選版型背景、捲動區、模板卡片、下一步按鈕
+ */
+.template-screen {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 0;
+  background: #fff;
+  background-image: url("assets/templates/chooselayout/background.png");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+}
+.template-screen .big-title { display: none; }
+.template-scroll {
+  flex: 1;
+  overflow: hidden;
+  padding: 80px 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+.template-grid {
+  display: flex;
+  gap: 36px;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 48px 10px;
+  width: max-content;
+  margin: 0 auto;
+  transform: translateX(0);
+}
+.template-card {
+  border: none;
+  border-radius: 16px;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.template-card.selected {
+  outline: 6px solid var(--accent);
+  transform: scale(1.15);
+  z-index: 10;
+  position: relative;
+}
+.template-preview {
+  width: 260px;
+  height: auto;
+  display: block;
+  transition: width 0.3s ease;
+}
+.template-card.selected .template-preview {
+  width: 300px;
+}
+.template-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.template-footer {
+  padding: 0 0 200px;
+  position: relative;
+  z-index: 5;
+  pointer-events: auto;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.template-footer .btn,
+#btn-template-next {
+  font-size: 32px;
+  font-weight: bold;
+  padding: 20px 60px;
+  min-width: 300px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.template-footer .btn:disabled,
+#btn-template-next:disabled {
+  background: #666;
+  opacity: 0.6;
+  cursor: not-allowed;
+}
