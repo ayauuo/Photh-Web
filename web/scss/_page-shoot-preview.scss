@@ -1,0 +1,45 @@
+/*
+ * 拍照預覽頁 #screen-shoot-preview
+ */
+
+@use "variables" as *;
+@use "mixins" as *;
+
+#screen-shoot-preview.active {
+  display: flex !important;
+}
+
+#screen-shoot-preview .screen-shoot-preview__content {
+  @include flex-column;
+  @include flex-center;
+  gap: $spacing-4xl;
+  padding: $spacing-4xl;
+  min-height: 100vh;
+  background: #111;
+}
+
+#screen-shoot-preview .screen-shoot-preview__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $spacing-lg;
+  max-width: 900px;
+}
+
+#screen-shoot-preview .screen-shoot-preview__img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: $radius-md;
+  background: #333;
+}
+
+#screen-shoot-preview .screen-shoot-preview__actions {
+  display: flex;
+  justify-content: center;
+
+  .btn {
+    font-size: 24px;
+    padding: 16px 48px;
+    min-width: 200px;
+  }
+}

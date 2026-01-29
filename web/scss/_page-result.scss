@@ -13,7 +13,7 @@
   padding: $spacing-4xl;
 }
 
-.result-wrap {
+#screen-result .screen-result__wrap {
   position: relative;
   z-index: 2;
   display: grid;
@@ -25,7 +25,7 @@
   height: calc(100vh - 80px);
 }
 
-.result-preview {
+#screen-result .screen-result__preview {
   background: transparent;
   border: none;
   border-radius: 0;
@@ -51,7 +51,7 @@
   }
 }
 
-.qr-panel {
+#screen-result .screen-result__qr-panel {
   position: relative;
   background: transparent;
   border: none;
@@ -75,7 +75,7 @@
   }
 }
 
-.qr-title {
+#screen-result .screen-result__qr-title {
   font-size: 20px;
   font-weight: bold;
   color: $color-333;
@@ -83,7 +83,7 @@
   margin-bottom: $spacing-md;
 }
 
-.qr-frame {
+#screen-result .screen-result__qr-frame {
   position: relative;
   width: 100%;
   max-width: 500px;
@@ -99,7 +99,7 @@
   margin-bottom: $spacing-4xl;
 }
 
-.qr-text {
+#screen-result .screen-result__qr-text {
   font-size: 12px;
   color: $color-gray-666;
   word-break: break-all;
@@ -108,7 +108,7 @@
   max-width: 400px;
 }
 
-.print-section {
+#screen-result .screen-result__print-section {
   width: 100%;
   max-width: 280px;
   display: flex;
@@ -118,7 +118,7 @@
   padding-bottom: $spacing-xl;
 }
 
-.print-button-wrapper {
+#screen-result .screen-result__print-button-wrapper {
   position: relative;
   width: 100%;
   cursor: pointer;
@@ -131,7 +131,7 @@
   }
 }
 
-.input-row {
+#screen-result .screen-result__input-row {
   display: flex;
   align-items: center;
   gap: 10px;

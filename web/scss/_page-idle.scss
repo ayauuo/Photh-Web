@@ -1,5 +1,5 @@
 /*
- * 待機／測試頁 #screen-idle
+ * 待機頁 #screen-idle
  */
 
 @use "variables" as *;
@@ -15,58 +15,9 @@
   height: 1080px;
 }
 
-.idle-background,
-.idle-logo,
-.idle-coin {
+#screen-idle .screen-idle__background,
+#screen-idle .screen-idle__logo,
+#screen-idle .screen-idle__coin {
   @include absolute-fill;
   object-fit: contain;
-}
-
-.test-buttons {
-  @include flex-center;
-  flex-direction: column;
-  gap: $spacing-lg;
-  min-height: 100vh;
-  padding: $spacing-4xl;
-  position: relative;
-  z-index: 10;
-
-  .btn {
-    min-width: 250px;
-    font-size: 20px;
-  }
-}
-
-.sub {
-  font-size: 24px;
-  text-align: center;
-  margin-bottom: 18px;
-}
-
-.payment-counter {
-  text-align: center;
-  margin: $spacing-2xl 0;
-  padding: $spacing-xl;
-  background: $color-f5;
-  border-radius: $radius-lg;
-  border: 2px solid $color-gray-ddd;
-}
-
-.counter-label {
-  font-size: 18px;
-  color: $color-gray-666;
-  margin-bottom: $spacing-sm;
-}
-
-.counter-amount {
-  font-size: 48px;
-  font-weight: bold;
-  color: $color-222;
-  margin: $spacing-sm 0;
-}
-
-.counter-last {
-  font-size: 16px;
-  color: $color-gray-888;
-  margin-top: $spacing-sm;
 }

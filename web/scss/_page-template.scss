@@ -1,10 +1,11 @@
 /*
  * 選版型頁 #screen-template
+ * 背景：chooselayout/background.png，中間版型列表用 code
  */
 
 @use "variables" as *;
 
-.template-screen {
+#screen-template {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -14,13 +15,9 @@
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: cover;
-
-  .big-title {
-    display: none;
-  }
 }
 
-.template-scroll {
+#screen-template .screen-template__scroll {
   flex: 1;
   overflow: hidden;
   padding: 80px 0 10px;
@@ -32,77 +29,116 @@
   z-index: 1;
 }
 
-.template-grid {
+#screen-template .screen-template__grid {
+  position:absolute;
+  top: 197px;
+  left: 0px;
+
+  // background-color: black;
   display: flex;
-  gap: $spacing-3xl;
+  gap: 28px;
   align-items: center;
   justify-content: center;
-  padding: $spacing-xs 48px 10px;
-  width: max-content;
-  margin: 0 auto;
+  padding: 0px;
+  width: 100%;
+  // margin: 0 auto;
   transform: translateX(0);
+
+  &.has-selection .screen-template__card:not(.is-selected) {
+    transform: scale(0.9);
+  }
 }
 
-.template-card {
+#screen-template .screen-template__card {
   border: none;
   border-radius: $radius-xl;
   background: transparent;
   padding: 0;
   cursor: pointer;
   transition: transform 0.3s ease;
+  z-index: 1;
 
-  &.selected {
+  &.is-selected {
     outline: 6px solid var(--accent);
-    transform: scale(1.15);
+    transform: scale(1.2);
     z-index: 10;
     position: relative;
-
-    .template-preview {
-      width: 300px;
-    }
   }
 }
 
-.template-preview {
-  width: 260px;
+#screen-template .screen-template__card-preview {
+  width: 428px;
   height: auto;
   display: block;
   transition: width 0.3s ease;
 }
 
-.template-img {
+#screen-template .screen-template__card-img {
   width: 100%;
   height: auto;
   display: block;
 }
 
-.template-footer {
-  padding: 0 0 200px;
-  position: relative;
-  z-index: 5;
-  pointer-events: auto;
+/* 選版型確認彈窗 msgbox */
+#screen-template .screen-template__msgbox {
+  position: absolute;
+  inset: 0;
+  z-index: 100;
   display: flex;
+  align-items: center;
   justify-content: center;
-  width: 100%;
+  padding: 20px;
 
-  .btn,
-  #btn-template-next {
-    font-size: 32px;
-    font-weight: bold;
-    padding: $spacing-xl 60px;
-    min-width: 300px;
-    background: $color-black;
-    color: #fff;
-    border: none;
-    border-radius: 0;
-    cursor: pointer;
-    transition: background 0.2s;
+  &.screen-template__msgbox--hidden {
+    display: none !important;
+  }
+}
+
+#screen-template .screen-template__msgbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#screen-template .screen-template__msgbox-window {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+#screen-template .screen-template__msgbox-window-bg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+#screen-template .screen-template__msgbox-btns {
+  display: flex;
+  gap: $spacing-5xl;
+  justify-content: center;
+  align-items: center;
+  margin-top: -150px;
+}
+
+#screen-template .screen-template__msgbox-btn {
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: block;
+  transition: opacity 0.2s;
+
+  img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-height: 80px;
   }
 
-  .btn:disabled,
-  #btn-template-next:disabled {
-    background: $color-gray-666;
-    opacity: 0.6;
-    cursor: not-allowed;
+  &:hover {
+    opacity: 0.9;
   }
 }

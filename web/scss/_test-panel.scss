@@ -1,0 +1,32 @@
+/*
+ * 測試面板浮層 #test-panel-overlay
+ */
+
+@use "mixins" as *;
+
+#test-panel-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  @include flex-center;
+  background: rgba(0, 0, 0, 0.6);
+
+  &.test-panel--hidden {
+    display: none !important;
+  }
+}
+
+#test-panel-overlay .test-panel__buttons {
+  @include flex-center;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 100vh;
+  padding: 40px;
+  position: relative;
+  z-index: 10;
+
+  .btn {
+    min-width: 250px;
+    font-size: 20px;
+  }
+}
