@@ -1,0 +1,145 @@
+/*
+ * 結果／QR 頁 #screen-result
+ */
+
+@use "variables" as *;
+
+#screen-result {
+  position: relative;
+  background-image: url("#{$path-templates}/QRcodePage/background.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  padding: $spacing-4xl;
+}
+
+.result-wrap {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: $spacing-4xl;
+  max-width: 1600px;
+  margin: 0 auto;
+  align-items: center;
+  height: calc(100vh - 80px);
+}
+
+.result-preview {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  padding-top: $spacing-xl;
+
+  img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: calc(100% - 20px);
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    object-fit: contain;
+    display: block;
+  }
+}
+
+.qr-panel {
+  position: relative;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 100%;
+  gap: 0;
+  padding-left: $spacing-xl;
+  padding-top: $spacing-4xl;
+
+  img {
+    width: 100%;
+    max-width: 480px;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 0;
+  }
+}
+
+.qr-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: $color-333;
+  text-align: left;
+  margin-bottom: $spacing-md;
+}
+
+.qr-frame {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-bottom: $spacing-4xl;
+}
+
+.qr-text {
+  font-size: 12px;
+  color: $color-gray-666;
+  word-break: break-all;
+  text-align: center;
+  margin-top: $spacing-md;
+  max-width: 400px;
+}
+
+.print-section {
+  width: 100%;
+  max-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  margin-top: auto;
+  padding-bottom: $spacing-xl;
+}
+
+.print-button-wrapper {
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+  display: block;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+.input-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: $spacing-md 0;
+
+  input {
+    font-size: 20px;
+    padding: $spacing-xs 10px;
+    width: 90px;
+  }
+}

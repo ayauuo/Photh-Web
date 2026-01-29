@@ -1,0 +1,96 @@
+/*
+ * 全站共用：色票、box-sizing、body、畫面切換、通用按鈕
+ */
+
+@use "variables" as *;
+@use "mixins" as *;
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+
+  min-height: 100vh;
+  overflow: hidden;
+  @include no-select;
+}
+
+input,
+textarea {
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+img,
+video {
+  @include no-drag;
+  pointer-events: auto;
+}
+
+// 畫面切換
+.screen {
+  display: none !important;
+  min-height: 100vh;
+  padding: $spacing-2xl $spacing-3xl;
+  position: relative;
+  z-index: 1;
+
+  &.active {
+    display: block !important;
+    z-index: 10;
+  }
+
+  &.template-screen.active {
+    display: flex !important;
+    z-index: 10;
+  }
+
+  &:not(.active) {
+    pointer-events: none;
+  }
+}
+
+// 按鈕
+.btn {
+  font-size: 22px;
+  padding: $spacing-md $spacing-xl;
+  min-width: 180px;
+  border: 1px solid $color-gray-999;
+  background: $color-gray-eee;
+  border-radius: $radius-md;
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &.primary {
+    background: $color-222;
+    color: #fff;
+    border-color: $color-222;
+  }
+
+  &.accent {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+  }
+
+  &.orange {
+    background: var(--orange);
+    color: #fff;
+    border-color: var(--orange);
+  }
+}
+
+.center-actions {
+  display: flex;
+  gap: $spacing-lg;
+  justify-content: center;
+  flex-wrap: wrap;
+}

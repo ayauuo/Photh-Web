@@ -3,20 +3,25 @@
   <head>
     <meta charset="utf-8" />
     <title>PhotoBooth</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
+
+
+
+
+
     <!-- 待機畫面 -->
     <div id="screen-idle" class="screen active">
-      <!-- <div class="test-buttons">
+      <div class="test-buttons">
         <button class="btn primary" id="btn-test-payment">測試：投幣畫面</button>
         <button class="btn primary" id="btn-test-template">測試：選版型畫面</button>
         <button class="btn primary" id="btn-test-shoot">測試：拍照畫面</button>
         <button class="btn primary" id="btn-test-processing">測試：處理畫面</button>
         <button class="btn primary" id="btn-test-result">測試：結果畫面</button>
         <button class="btn primary" id="btn-quick-print" style="background-color: #28a745; font-size: 18px; padding: 15px 30px; margin-top: 10px;">直接拍照並列印</button>
-      </div> -->
-</div>
+      </div>
+    </div>
     <!-- 待機畫面 -->
 
 
@@ -97,7 +102,7 @@
     <!-- 處理/結果 -->
     <div id="screen-processing" class="screen">
       <div class="processing-content">
-        <img src="assets/templates/common/image_processing.png" alt="處理中" class="processing-image" />
+        <!-- <img src="assets/templates/common/image_processing.png" alt="處理中" class="processing-image" /> -->
       </div>
     </div>
     <div id="screen-result" class="screen">
@@ -131,7 +136,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/glfx@0.0.4/glfx.js"></script>
-    <script src="config.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

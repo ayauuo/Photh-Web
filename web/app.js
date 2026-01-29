@@ -257,7 +257,7 @@ if (window.chrome && window.chrome.webview) {
 }
 
 const templates = [
-  { id: "bk01", preview: "assets/templates/chooselayout/bk01", shotCount: 4, sizeKey: "4x6",
+  { id: "bk01", preview: "assets/templates/chooselayout/bk01.png", shotCount: 4, sizeKey: "4x6",
     captureW: 544, captureH: 471,
     stageSize: { maxWidth: "1200px", maxHeight: "calc(100vh - 200px)" },
     width: 1205, height: 1795, slots: [
@@ -266,7 +266,7 @@ const templates = [
       { x: 625, y: 244, w: 544, h: 471 },
       { x: 623, y: 1061, w: 544, h: 471 },
     ] },
-  { id: "bk02", preview: "assets/templates/chooselayout/bk02", shotCount: 4, sizeKey: "4x6",
+  { id: "bk02", preview: "assets/templates/chooselayout/bk02.png", shotCount: 4, sizeKey: "4x6",
     captureW: 547, captureH: 405,
     stageSize: { maxWidth: "1200px", maxHeight: "calc(100vh - 200px)" },
     width: 1205, height: 1795, slots: [
@@ -275,14 +275,14 @@ const templates = [
       { x: 662, y: 667, w: 547, h: 405 },
       { x: 662, y: 1158, w: 547, h: 405 },
     ] },
-  { id: "bk03", preview: "assets/templates/chooselayout/bk03", shotCount: 2, sizeKey: "4x6",
+  { id: "bk03", preview: "assets/templates/chooselayout/bk03.png", shotCount: 2, sizeKey: "4x6",
     captureW: 524, captureH: 502,
     stageSize: { maxWidth: "1200px", maxHeight: "calc(100vh - 200px)" },
     width: 1205, height: 1795, slots: [
       { x: 56, y: 1004, w: 524 , h: 502 },
       { x: 637, y: 590, w: 524, h: 502 },
     ] },
-  { id: "bk04", preview: "assets/templates/chooselayout/bk04", shotCount: 4, sizeKey: "4x6",
+  { id: "bk04", preview: "assets/templates/chooselayout/bk04.png", shotCount: 4, sizeKey: "4x6",
     captureW: 529, captureH: 400,
     stageSize: { maxWidth: "1200px", maxHeight: "calc(100vh - 200px)" },
     width: 1205, height: 1795, slots: [

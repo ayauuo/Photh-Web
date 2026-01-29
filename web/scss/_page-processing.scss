@@ -1,0 +1,22 @@
+/*
+ * 處理中頁 #screen-processing
+ */
+
+@use "mixins" as *;
+
+#screen-processing.active {
+  display: flex !important;
+  @include flex-center;
+  background: #fff;
+}
+
+.processing-content {
+  @include flex-column;
+  @include flex-center;
+}
+
+.processing-image {
+  max-width: 80%;
+  max-height: 80vh;
+  object-fit: contain;
+}

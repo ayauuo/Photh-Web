@@ -1,0 +1,12 @@
+/*
+ * PhotoBooth 樣式入口（SCSS）
+ * 順序勿改：base → 各頁面 → loading
+ */
+
+@use "base";
+@use "page-idle";
+@use "page-template";
+@use "page-shoot";
+@use "page-processing";
+@use "page-result";
+@use "loading";
